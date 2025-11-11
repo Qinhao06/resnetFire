@@ -215,7 +215,7 @@ def main():
     parser.add_argument('--model', default='./best.pt', help='YOLO模型路径')
     parser.add_argument('--input', default='./nofire4', help='输入图片目录')
     parser.add_argument('--output', default='./detection_results', help='输出目录')
-    parser.add_argument('--conf', type=float, default=0.3, help='置信度阈值')
+    parser.add_argument('--conf', type=float, default=0.05, help='置信度阈值')
     
     args = parser.parse_args()
     

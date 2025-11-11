@@ -44,7 +44,11 @@ class FireDataset(Dataset):
                     self.labels.append(1)
         
         # 加载非火焰图像 (标签为0)
+        # 尝试 no_fire 或 nofire 文件夹
         no_fire_dir = os.path.join(data_dir, 'no_fire')
+        if not os.path.exists(no_fire_dir):
+            no_fire_dir = os.path.join(data_dir, 'nofire')
+        
         if os.path.exists(no_fire_dir):
             for img_name in os.listdir(no_fire_dir):
                 if img_name.lower().endswith(('.png', '.jpg', '.jpeg')):

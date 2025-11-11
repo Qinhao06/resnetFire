@@ -277,18 +277,18 @@ class FireDatasetCreator:
 def main():
     parser = argparse.ArgumentParser(description='从YOLO数据集创建火焰二分类正样本数据集')
     parser.add_argument('--yolo_dataset', type=str, 
-                       default='./FireData_filtered',
+                       default='./fire4',
                        help='YOLO数据集路径')
     parser.add_argument('--output_dir', type=str, 
                        default='./data',
                        help='输出数据集目录')
-    parser.add_argument('--save_full_images', action='store_true', default=True,
+    parser.add_argument('--save_full_images', action='store_true', default=False,
                        help='保存完整图像')
-    parser.add_argument('--save_cropped_regions', action='store_true', default=False,
+    parser.add_argument('--save_cropped_regions', action='store_true', default=True,
                        help='保存裁剪的火焰区域')
     parser.add_argument('--min_crop_size', type=int, default=50,
                        help='裁剪区域的最小尺寸')
-    parser.add_argument('--splits', nargs='+', default=['train', 'valid'],
+    parser.add_argument('--splits', nargs='+', default=['train', 'vaild'],
                        help='要处理的数据集分割')
     
     args = parser.parse_args()
